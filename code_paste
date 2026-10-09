@@ -1,0 +1,29 @@
+function frankenSplice(array1, array2, index) {
+  let newArray1 = []
+  for (let i of array1) {
+    newArray1.push(i)
+  }
+  let newArray2 = []
+  for (let i of array2) {
+    newArray2.push(i)
+  }
+  let new2End = newArray2.slice(index)
+  let new2Start = newArray2.slice(0, index)
+  let finalArray = []
+  for (let i of new2Start) {
+    finalArray.push(i)
+  }
+  for (let i of newArray1) {
+    finalArray.push(i)
+  }
+  for (let i of new2End) {
+    finalArray.push(i)
+  }
+  console.log(finalArray)
+  return finalArray
+}
+
+frankenSplice([1, 2, 3], [4, 5], 1)
+frankenSplice([1, 2], ["a", "b"], 1)
+frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)
+frankenSplice([1, 2, 3, 4], [], 0)
